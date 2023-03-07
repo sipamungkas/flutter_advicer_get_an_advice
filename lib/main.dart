@@ -1,3 +1,4 @@
+import 'package:advicer/application/pages/advice/advice_page.dart';
 import 'package:advicer/theme.dart';
 import 'package:advicer/application/core/services/theme_service.dart';
 import 'package:flutter/material.dart';
@@ -21,7 +22,7 @@ class MyApp extends StatelessWidget {
         theme: AppTheme.lightTheme,
         darkTheme: AppTheme.darkTheme,
         title: 'Question List',
-        home: const Placeholder(),
+        home: const AdvicePage(),
       );
     });
   }
