@@ -1,4 +1,7 @@
 import 'package:advicer/application/core/services/theme_service.dart';
+import 'package:advicer/application/pages/advice/widgets/advice_field.dart';
+import 'package:advicer/application/pages/advice/widgets/custom_button.dart';
+import 'package:advicer/application/pages/advice/widgets/error_message.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -28,7 +31,26 @@ class AdvicePage extends StatelessWidget {
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 50),
         child: Column(
-          children: [],
+          children: [
+            Expanded(
+              child: Center(
+                  child: const ErrorMessage(message: 'Something went wrong!')
+                  // const AdviceField(advice: 'example advice goes here!'),
+                  // CircularProgressIndicator(
+                  //     color: themeData.colorScheme.secondary,
+                  // ),
+                  // Text(
+                  //   'Your Advice is waiting for You!',
+                  //   style: themeData.textTheme.displayLarge,
+                  //   textAlign: TextAlign.center,
+                  ),
+              // ),
+            ),
+            const SizedBox(
+              height: 200,
+              child: Center(child: CustomButton()),
+            ),
+          ],
         ),
       ),
     );
