@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
         theme: AppTheme.lightTheme,
         darkTheme: AppTheme.darkTheme,
         title: 'Question List',
-        home: const AdvicePage(),
+        home: const AdvicePageWrapperProvider(),
       );
     });
   }
