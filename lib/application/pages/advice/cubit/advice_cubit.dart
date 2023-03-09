@@ -12,9 +12,9 @@ class AdviceCubit extends Cubit<AdviceCubitState> {
       AdviceStateLoading(),
     );
     // execute business logic, example: get and advice
-    debugPrint('fake get advice trigger');
+
     await Future.delayed(const Duration(seconds: 2), () {});
-    debugPrint('got advice');
+    await Future.delayed(const Duration(seconds: 2), () {});
     emit(
       const AdviceStateLoaded(
           advice: 'Advice from server but it\'s fake, just to test the cubit'),
