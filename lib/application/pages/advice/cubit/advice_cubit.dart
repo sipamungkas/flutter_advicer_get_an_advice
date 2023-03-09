@@ -1,4 +1,5 @@
-import 'package:flutter/material.dart';
+import 'package:advicer/domain/entities/advice_entity.dart';
+import 'package:advicer/domain/usecases/advice_usecases.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:equatable/equatable.dart';
 
@@ -6,18 +7,14 @@ part 'advice_state.dart';
 
 class AdviceCubit extends Cubit<AdviceCubitState> {
   AdviceCubit() : super(AdviceInitial());
+  final AdviceUsecases adviceUsecases = AdviceUsecases();
+  // cubit cand use multiple usecases, eg: AuthenticationUsecases and other usecases
 
   void adviceRequest() async {
-    emit(
-      AdviceStateLoading(),
-    );
     // execute business logic, example: get and advice
+    emit(AdviceStateLoading());
+    final AdviceEntity advice = await adviceUsecases.getAdvice();
 
-    await Future.delayed(const Duration(seconds: 2), () {});
-    await Future.delayed(const Duration(seconds: 2), () {});
-    emit(
-      const AdviceStateLoaded(
-          advice: 'Advice from server but it\'s fake, just to test the cubit'),
-    );
+    emit(AdviceStateLoaded(advice: advice.advice));
   }
 }
