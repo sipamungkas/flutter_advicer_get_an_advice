@@ -31,22 +31,22 @@ class AdvicePage extends StatelessWidget {
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 50),
         child: Column(
-          children: [
+          children: const [
             Expanded(
-              child: Center(
-                  child: const ErrorMessage(message: 'Something went wrong!')
-                  // const AdviceField(advice: 'example advice goes here!'),
-                  // CircularProgressIndicator(
-                  //     color: themeData.colorScheme.secondary,
-                  // ),
-                  // Text(
-                  //   'Your Advice is waiting for You!',
-                  //   style: themeData.textTheme.displayLarge,
-                  //   textAlign: TextAlign.center,
-                  ),
+              child:
+                  Center(child: ErrorMessage(message: 'Something went wrong!')
+                      // const AdviceField(advice: 'example advice goes here!'),
+                      // CircularProgressIndicator(
+                      //     color: themeData.colorScheme.secondary,
+                      // ),
+                      // Text(
+                      //   'Your Advice is waiting for You!',
+                      //   style: themeData.textTheme.displayLarge,
+                      //   textAlign: TextAlign.center,
+                      ),
               // ),
             ),
-            const SizedBox(
+            SizedBox(
               height: 200,
               child: Center(child: CustomButton()),
             ),
