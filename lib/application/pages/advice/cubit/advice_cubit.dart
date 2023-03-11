@@ -16,11 +16,11 @@ class AdviceCubit extends Cubit<AdviceCubitState> {
   final AdviceUsecases adviceUsecases = AdviceUsecases();
   // cubit cand use multiple usecases, eg: AuthenticationUsecases and other usecases
 
-  void adviceRequest() async {
+  void adviceRequest(int adviceId) async {
     // execute business logic, example: get and advice
     emit(AdviceStateLoading());
     // dont need to add type it will get from the usecase
-    final failureOrAdvice = await adviceUsecases.getAdvice();
+    final failureOrAdvice = await adviceUsecases.getAdvice(adviceId);
     // fold will decide, if we got the left(failure) side or the right(advice) side from Failure Dartz
     failureOrAdvice.fold(
       (failure) {
